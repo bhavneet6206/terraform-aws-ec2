@@ -9,7 +9,7 @@ resource "aws_security_group" "ssh_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["my_ip"]
+    cidr_blocks = ["var.my_ip"]
   }
 
   ingress {
@@ -31,7 +31,7 @@ resource "aws_instance" "myec2" {
   ami                    = "ami-048f4445314bcaa09"
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.ssh_sg.id]
-  key_name               = "key name"
+  key_name               = "var.key_name"
   user_data              = <<-EOF
 #!/bin/bash
 yum update -y
