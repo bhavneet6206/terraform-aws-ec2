@@ -29,6 +29,9 @@ This project demonstrates how to provision an AWS EC2 instance using Terraform w
 ## 📷 Output
 Successfully deployed a web server using Terraform on AWS.
 
+## Key Security Point
+SSH is currently open for testing purposes but in production environment should be restricted to specific IP.
+
 ---
 
 ## 💡 Author
